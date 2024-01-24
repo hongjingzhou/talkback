@@ -1,4 +1,5 @@
 // For building the open-source release of TalkBack.
+// https://github.com/google/talkback/pull/27/commits/329ab18962431938463f965877effdfed62efe9d
 
 apply plugin: 'com.android.application'
 
@@ -14,18 +15,18 @@ dependencies {
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
     dependencies {
         classpath 'org.aspectj:aspectjtools:1.8.1'
-        classpath 'com.android.tools.build:gradle:3.5.4'
+        classpath 'com.android.tools.build:gradle:7.3.1'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
 }
@@ -36,7 +37,7 @@ android {
         applicationId talkbackApplicationId
         versionName talkbackVersionName + "-" + BUILD_TIMESTAMP
         minSdkVersion 26
-        targetSdkVersion 30
+        targetSdkVersion 33
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'
         multiDexEnabled true
     }
